@@ -20,7 +20,7 @@ const router = createBrowserRouter([
             {
                 path: "/details",
                 element: <PrivateRoute><TravelCard></TravelCard></PrivateRoute>,
-                loader: () => fetch("http://localhost:5000/travelinfo")
+                loader: () => fetch("https://dream-travell-server-3kobqrfsr-monzurul002.vercel.app/travelInfo")
             },
             {
                 path: "/booking",
