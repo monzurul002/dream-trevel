@@ -1,0 +1,24 @@
+.image-container {
+    position: relative;
+    display: inline-block;
+    /* or block, depending on your layout */
+}
+
+.image-text {
+    position: absolute;
+    bottom: 10px;
+    /* Adjust as needed to position the text */
+    left: 10px;
+    /* Adjust as needed to position the text */
+    color: white;
+
+    font-weight: 700;
+    /* Padding around the text */
+    font-size: 24px;
+    /* Font size */
+}
+
+.image-container:hover {
+    outline: 5px solid yellow;
+    border-radius: 8px;
+}
