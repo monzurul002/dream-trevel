@@ -10,7 +10,9 @@ import { AuthContext } from '../../Providers/AuthProviders';
 import { Button } from 'react-bootstrap';
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext)
-
+    if (user?.emailVerified) {
+        alert("wow verified")
+    }
     return (
 
         <Container className=' ' >
@@ -36,6 +38,7 @@ const NavigationBar = () => {
 
                     </Form>
                 </div>
+
 
                 <div className='fw-3  '>
                     <Navbar.Toggle aria-controls="navbarScroll" />
