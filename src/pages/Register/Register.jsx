@@ -8,7 +8,7 @@ import { AuthContext } from '../../Providers/AuthProviders';
 import { useState } from 'react';
 
 const Register = () => {
-    const { googleSignIn, emailPasswordCreateUser, userInfoUpdate } = useContext(AuthContext)
+    const { googleSignIn, emailPasswordCreateUser, userInfoUpdate, emailVerify } = useContext(AuthContext)
     const [error, setError] = useState(null);
     const navigate = useNavigate()
 
@@ -45,12 +45,18 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+
                 userInfoUpdate(fullName)
                     .then(() => {
                         navigate("/")
                     })
                     .catch((error) => {
                         console.log(error.message);
+                    })
+
+                emailVerify()
+                    .then(() => {
+
                     })
             })
             .catch(error => {
